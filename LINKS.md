@@ -7,35 +7,35 @@ Every link for the Product Management Master Handbook and Varun Kumar's portfoli
 | What | Link |
 |---|---|
 | Live site | [pm-master-handbook-varun.netlify.app](https://pm-master-handbook-varun.netlify.app) |
-| Complete handbook PDF (444 pages) | [Complete-PM-Master-Handbook.pdf](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Complete-PM-Master-Handbook.pdf) |
+| Complete handbook PDF (444 pages) | [Complete-PM-Master-Handbook.pdf](./pdf/Complete-PM-Master-Handbook.pdf) |
 | Repository | [varunkumar1989/Product-Management-Handbook](https://github.com/varunkumar1989/Product-Management-Handbook) |
 
 ## Modules
 
 | # | Module | Live page | PDF |
 |---|---|---|---|
-| 01 | Fundamentals | [Page](https://pm-master-handbook-varun.netlify.app/m01.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-01-Fundamentals.pdf) |
-| 02 | Strategy | [Page](https://pm-master-handbook-varun.netlify.app/m02.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-02-Strategy.pdf) |
-| 03 | Discovery | [Page](https://pm-master-handbook-varun.netlify.app/m03.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-03-Discovery.pdf) |
-| 04 | Prioritization | [Page](https://pm-master-handbook-varun.netlify.app/m04.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-04-Prioritization.pdf) |
-| 05 | UX Design | [Page](https://pm-master-handbook-varun.netlify.app/m05.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-05-UX-Design.pdf) |
-| 06 | Communication | [Page](https://pm-master-handbook-varun.netlify.app/m06.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-06-Communication.pdf) |
-| 07 | Analytics | [Page](https://pm-master-handbook-varun.netlify.app/m07.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-07-Analytics.pdf) |
-| 08 | Growth | [Page](https://pm-master-handbook-varun.netlify.app/m08.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-08-Growth.pdf) |
-| 09 | Tech and System Design | [Page](https://pm-master-handbook-varun.netlify.app/m09.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-09-Tech-System-Design.pdf) |
-| 10 | LLMs and RAG | [Page](https://pm-master-handbook-varun.netlify.app/m10.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-10-LLM-RAG.pdf) |
-| 11 | Vibe Coding | [Page](https://pm-master-handbook-varun.netlify.app/m11.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-11-Vibe-Coding.pdf) |
-| 12 | Agentic AI | [Page](https://pm-master-handbook-varun.netlify.app/m12.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Module-12-Agentic-AI.pdf) |
+| 01 | Fundamentals | [Page](https://pm-master-handbook-varun.netlify.app/m01.html) | [PDF](./pdf/Module-01-Fundamentals.pdf) |
+| 02 | Strategy | [Page](https://pm-master-handbook-varun.netlify.app/m02.html) | [PDF](./pdf/Module-02-Strategy.pdf) |
+| 03 | Discovery | [Page](https://pm-master-handbook-varun.netlify.app/m03.html) | [PDF](./pdf/Module-03-Discovery.pdf) |
+| 04 | Prioritization | [Page](https://pm-master-handbook-varun.netlify.app/m04.html) | [PDF](./pdf/Module-04-Prioritization.pdf) |
+| 05 | UX Design | [Page](https://pm-master-handbook-varun.netlify.app/m05.html) | [PDF](./pdf/Module-05-UX-Design.pdf) |
+| 06 | Communication | [Page](https://pm-master-handbook-varun.netlify.app/m06.html) | [PDF](./pdf/Module-06-Communication.pdf) |
+| 07 | Analytics | [Page](https://pm-master-handbook-varun.netlify.app/m07.html) | [PDF](./pdf/Module-07-Analytics.pdf) |
+| 08 | Growth | [Page](https://pm-master-handbook-varun.netlify.app/m08.html) | [PDF](./pdf/Module-08-Growth.pdf) |
+| 09 | Tech and System Design | [Page](https://pm-master-handbook-varun.netlify.app/m09.html) | [PDF](./pdf/Module-09-Tech-System-Design.pdf) |
+| 10 | LLMs and RAG | [Page](https://pm-master-handbook-varun.netlify.app/m10.html) | [PDF](./pdf/Module-10-LLM-RAG.pdf) |
+| 11 | Vibe Coding | [Page](https://pm-master-handbook-varun.netlify.app/m11.html) | [PDF](./pdf/Module-11-Vibe-Coding.pdf) |
+| 12 | Agentic AI | [Page](https://pm-master-handbook-varun.netlify.app/m12.html) | [PDF](./pdf/Module-12-Agentic-AI.pdf) |
 
 ## Libraries and tools
 
 | Section | Live page | PDF |
 |---|---|---|
 | Start here | [Page](https://pm-master-handbook-varun.netlify.app/start.html) |  |
-| Framework Library | [Page](https://pm-master-handbook-varun.netlify.app/frameworks.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Framework-Library.pdf) |
-| Case Study Library | [Page](https://pm-master-handbook-varun.netlify.app/cases.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Case-Study-Library.pdf) |
-| Practical Projects | [Page](https://pm-master-handbook-varun.netlify.app/projects.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Practical-Projects.pdf) |
-| Interview Handbook | [Page](https://pm-master-handbook-varun.netlify.app/interview.html) | [PDF](https://github.com/varunkumar1989/Product-Management-Handbook/blob/main/pdf/Interview-Handbook.pdf) |
+| Framework Library | [Page](https://pm-master-handbook-varun.netlify.app/frameworks.html) | [PDF](./pdf/Framework-Library.pdf) |
+| Case Study Library | [Page](https://pm-master-handbook-varun.netlify.app/cases.html) | [PDF](./pdf/Case-Study-Library.pdf) |
+| Practical Projects | [Page](https://pm-master-handbook-varun.netlify.app/projects.html) | [PDF](./pdf/Practical-Projects.pdf) |
+| Interview Handbook | [Page](https://pm-master-handbook-varun.netlify.app/interview.html) | [PDF](./pdf/Interview-Handbook.pdf) |
 | Templates | [Page](https://pm-master-handbook-varun.netlify.app/templates.html) |  |
 | Glossary | [Page](https://pm-master-handbook-varun.netlify.app/glossary.html) |  |
 | Resources | [Page](https://pm-master-handbook-varun.netlify.app/resources.html) |  |
