@@ -27,6 +27,26 @@ Every link for the Product Management Master Handbook and Varun Kumar's portfoli
 | 11 | Vibe Coding | [Page](https://pm-master-handbook-varun.netlify.app/m11.html) | [PDF](./pdf/Module-11-Vibe-Coding.pdf) |
 | 12 | Agentic AI | [Page](https://pm-master-handbook-varun.netlify.app/m12.html) | [PDF](./pdf/Module-12-Agentic-AI.pdf) |
 
+## AI Tools Lab (Modules 13 to 23)
+
+Hands-on classes from basic to advanced, with step-by-step labs and pictures. The whole lab is also one practice PDF: [AI-Tools-Lab.pdf](./pdf/AI-Tools-Lab.pdf).
+
+| # | Class | Live page | PDF |
+|---|---|---|---|
+| 13 | AI Tools Landscape and Starter Stack | [Page](https://pm-master-handbook-varun.netlify.app/m13.html) | [PDF](./pdf/Module-13-AI-Tools-Landscape.pdf) |
+| 14 | Claude for Daily PM Work | [Page](https://pm-master-handbook-varun.netlify.app/m14.html) | [PDF](./pdf/Module-14-Claude-Daily-Work.pdf) |
+| 15 | Claude Code | [Page](https://pm-master-handbook-varun.netlify.app/m15.html) | [PDF](./pdf/Module-15-Claude-Code.pdf) |
+| 16 | Lovable | [Page](https://pm-master-handbook-varun.netlify.app/m16.html) | [PDF](./pdf/Module-16-Lovable.pdf) |
+| 17 | Replit and Other AI App Builders | [Page](https://pm-master-handbook-varun.netlify.app/m17.html) | [PDF](./pdf/Module-17-Replit-and-App-Builders.pdf) |
+| 18 | Figma and AI Design Tools | [Page](https://pm-master-handbook-varun.netlify.app/m18.html) | [PDF](./pdf/Module-18-Figma.pdf) |
+| 19 | Notion, PRD Tools and AI Docs | [Page](https://pm-master-handbook-varun.netlify.app/m19.html) | [PDF](./pdf/Module-19-Notion-and-PRD-Tools.pdf) |
+| 20 | Automation: Zapier, Make, n8n | [Page](https://pm-master-handbook-varun.netlify.app/m20.html) | [PDF](./pdf/Module-20-Automation.pdf) |
+| 21 | Business Chatbots (WhatsApp, Slack, Web) | [Page](https://pm-master-handbook-varun.netlify.app/m21.html) | [PDF](./pdf/Module-21-Business-Chatbots.pdf) |
+| 22 | Voice Agents | [Page](https://pm-master-handbook-varun.netlify.app/m22.html) | [PDF](./pdf/Module-22-Voice-Agents.pdf) |
+| 23 | Learning Paths and Courses | [Page](https://pm-master-handbook-varun.netlify.app/m23.html) | [PDF](./pdf/Module-23-Learning-Paths.pdf) |
+
+The live-page links work after the updated site is deployed to Netlify.
+
 ## Libraries and tools
 
 | Section | Live page | PDF |

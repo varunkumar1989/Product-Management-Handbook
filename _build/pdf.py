@@ -4,7 +4,7 @@
     python -I _build/pdf.py [Name ...]      # names without .html; default = all
 Uses the installed Microsoft Edge via Playwright (no browser download).
 """
-import sys, json, re
+import sys, json, re, os
 from pathlib import Path
 import pymupdf
 from playwright.sync_api import sync_playwright
@@ -107,7 +107,11 @@ def clean_outline(page, pdf_path):
 def main(names):
     files = [PRINT / f"{n}.html" for n in names] if names else sorted(PRINT.glob("*.html"))
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(channel="msedge", headless=True)
+        try:
+            browser = pw.chromium.launch(channel="msedge", headless=True)
+        except Exception:  # no Edge (e.g. Linux): use a local Chromium (PMH_CHROMIUM) or Playwright's own
+            exe = os.environ.get("PMH_CHROMIUM")
+            browser = pw.chromium.launch(headless=True, executable_path=exe) if exe else pw.chromium.launch(headless=True)
         ctx = browser.new_context()
         page = ctx.new_page()
         for f in files:

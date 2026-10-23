@@ -346,7 +346,7 @@ def layers(title, rows, edges=None, caption="", alt="", width=720, labels=None):
     for r, row in enumerate(rows):
         n = len(row)
         usable = width - LABW - 76  # 30px gutters each side leave room for routed back-edges
-        bw = min(170, (usable - (n - 1) * 20) / n)
+        bw = min(170 if n > 1 else 420, (usable - (n - 1) * 20) / n)
         total = n * bw + (n - 1) * 20
         x0 = LABW + 38 + (usable - total) / 2
         y = 10 + TOP + r * (nodeh + vgap)
@@ -615,6 +615,239 @@ def concentric(title, rings, caption="", alt=""):
     return _fig("".join(s), title, caption, alt or f"Concentric market circles: {title}")
 
 
+
+# ---------------------------------------------------------------- desktop app wireframe (illustrative)
+def _wf_items(s, items, x0, y, w, notes_pos):
+    """Draw stacked wireframe items inside a column; returns the new y. A label starting with
+    '[n] ' gets a numbered marker that links to note n under the figure."""
+    for kind, lab in items:
+        lab = str(lab)
+        mark = None
+        if lab.startswith("[") and "]" in lab[:4]:
+            mark, lab = lab[1:lab.index("]")], lab[lab.index("]") + 1:].strip()
+        y0 = y
+        if kind == "bar":
+            s.append(f'<rect x="{x0}" y="{y}" width="{w}" height="26" rx="5" class="wf-bar"/>')
+            s.append(_text(x0 + 10, y + 17, lab, "tiny b", "start"))
+            y += 34
+        elif kind == "tabs":
+            parts = lab.split("|")
+            tw = w / max(1, len(parts))
+            for i, t in enumerate(parts):
+                on = t.startswith("*")
+                t = t.lstrip("*")
+                s.append(f'<rect x="{x0 + i * tw:.1f}" y="{y}" width="{tw - 4:.1f}" height="22" rx="5" ' + ('fill="var(--c1)"' if on else 'class="wf-bar"') + '/>')
+                s.append(_text(x0 + i * tw + tw / 2 - 2, y + 15, t, "tiny b on-fill" if on else "tiny"))
+            y += 30
+        elif kind == "text":
+            n = len(wrap(lab, int(w / 5.4)))
+            s.append(_text(x0 + 4, y + 11, lab, "tiny", "start", width=int(w / 5.4), lh=11))
+            y += 8 + 11 * n + 4
+        elif kind == "img":
+            s.append(f'<rect x="{x0}" y="{y}" width="{w}" height="56" rx="6" class="wf-img"/>')
+            s.append(_text(x0 + w / 2, y + 32, lab, "tiny mut"))
+            y += 64
+        elif kind == "input":
+            s.append(f'<rect x="{x0}" y="{y}" width="{w}" height="28" rx="6" class="wf-input"/>')
+            s.append(_text(x0 + 10, y + 18, lab, "tiny mut", "start"))
+            y += 36
+        elif kind == "btn":
+            bw = min(w, max(90, 7 * len(lab) + 24))
+            s.append(f'<rect x="{x0}" y="{y}" width="{bw}" height="28" rx="7" fill="var(--c1)"/>')
+            s.append(_text(x0 + bw / 2, y + 18, lab, "tiny b on-fill"))
+            y += 36
+        elif kind == "row":
+            a, _, b = lab.partition("|")
+            s.append(f'<line x1="{x0}" y1="{y + 24}" x2="{x0 + w}" y2="{y + 24}" class="grid"/>')
+            s.append(_text(x0 + 4, y + 16, a, "tiny", "start"))
+            s.append(_text(x0 + w - 4, y + 16, b, "tiny b", "end"))
+            y += 28
+        elif kind in ("user", "ai"):
+            n = len(wrap(lab, int(w * 0.78 / 5.4)))
+            bh = 12 + 11 * n
+            bw = w * 0.82
+            bx = x0 + w - bw if kind == "user" else x0
+            fill = 'fill="var(--c1)" fill-opacity=".14" stroke="var(--c1)"' if kind == "user" else 'class="wf-bar"'
+            s.append(f'<rect x="{bx:.1f}" y="{y}" width="{bw:.1f}" height="{bh}" rx="9" {fill}/>')
+            s.append(_text(bx + 8, y + 15, lab, "tiny", "start", width=int(w * 0.78 / 5.4), lh=11))
+            y += bh + 8
+        elif kind == "code":
+            lines = lab.split("\\n") if "\\n" in lab else lab.split(" ;; ")
+            bh = 12 + 12 * len(lines)
+            s.append(f'<rect x="{x0}" y="{y}" width="{w}" height="{bh}" rx="6" fill="var(--ink)" fill-opacity=".9"/>')
+            for i, ln in enumerate(lines):
+                s.append(f'<text x="{x0 + 8}" y="{y + 16 + 12 * i}" class="tiny on-fill" text-anchor="start" style="font-family:ui-monospace,Consolas,monospace">{_e(ln)}</text>')
+            y += bh + 8
+        elif kind == "warn":
+            s.append(f'<rect x="{x0}" y="{y}" width="{w}" height="28" rx="6" class="wf-warn"/>')
+            s.append(_text(x0 + 10, y + 18, lab, "tiny b", "start"))
+            y += 36
+        elif kind == "ok":
+            s.append(f'<rect x="{x0}" y="{y}" width="{w}" height="28" rx="6" fill="var(--c4)" fill-opacity=".14" stroke="var(--c4)"/>')
+            s.append(_text(x0 + 10, y + 18, lab, "tiny b", "start"))
+            y += 36
+        elif kind == "toggle":
+            a, _, b = lab.partition("|")
+            on = b.strip().lower() in ("on", "yes", "true")
+            s.append(_text(x0 + 4, y + 16, a, "tiny", "start"))
+            s.append(f'<rect x="{x0 + w - 34}" y="{y + 5}" width="30" height="16" rx="8" ' + ('fill="var(--c4)"' if on else 'class="wf-bar"') + '/>')
+            s.append(f'<circle cx="{x0 + w - (12 if on else 26)}" cy="{y + 13}" r="6" fill="#fff" stroke="var(--line)"/>')
+            y += 28
+        if mark:
+            s.append(f'<circle cx="{x0 + w + 2}" cy="{y0 + 10}" r="9" fill="var(--c3)"/>')
+            s.append(_text(x0 + w + 2, y0 + 14, mark, "tiny b on-fill"))
+    return y
+
+
+def window(title, app, main, sidebar=None, panel=None, notes=None, url="", caption="", alt=""):
+    """Annotated desktop-app wireframe. Always labelled illustrative: it shows the layout and the
+    clicks in order, not a real screenshot of the product."""
+    W = 720
+    s = []
+    side_w = 150 if sidebar else 0
+    pan_w = 190 if panel else 0
+    top = 34
+    mx = 12 + side_w + 14
+    mw = W - mx - 14 - pan_w - (12 if panel else 0) - 14
+    body = []
+    yb = top + 14
+    if sidebar:
+        y = yb
+        for it in sidebar:
+            on = str(it).startswith("*")
+            t = str(it).lstrip("*")
+            mark = None
+            if t.startswith("[") and "]" in t[:4]:
+                mark, t = t[1:t.index("]")], t[t.index("]") + 1:].strip()
+            if on:
+                body.append(f'<rect x="20" y="{y - 13}" width="{side_w - 12}" height="20" rx="5" fill="var(--c1)" fill-opacity=".16"/>')
+            body.append(_text(28, y + 1, t, "tiny b" if on else "tiny", "start"))
+            if mark:
+                body.append(f'<circle cx="{side_w - 4}" cy="{y - 3}" r="9" fill="var(--c3)"/>')
+                body.append(_text(side_w - 4, y + 1, mark, "tiny b on-fill"))
+            y += 24
+        side_end = y
+    else:
+        side_end = yb
+    main_end = _wf_items(body, main, mx, yb, mw, None)
+    pan_end = yb
+    if panel:
+        px = W - 14 - pan_w
+        pan_end = _wf_items(body, panel, px + 8, yb, pan_w - 16, None)
+    H_frame = max(side_end, main_end, pan_end) + 10
+    notes = notes or []
+    note_h = 0
+    note_svg = []
+    if notes:
+        y = H_frame + 22
+        for k, nt in enumerate(notes):
+            lines = wrap(nt, 104)
+            note_svg.append(f'<circle cx="24" cy="{y - 4}" r="9" fill="var(--c3)"/>')
+            note_svg.append(_text(24, y, k + 1, "tiny b on-fill"))
+            note_svg.append(_text(40, y, nt, "small", "start", width=104, lh=14))
+            y += 14 * len(lines) + 8
+        note_h = y - H_frame
+    H = H_frame + note_h + 6
+    s.append(f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">')
+    s.append(f'<rect x="6" y="6" width="{W - 12}" height="{H_frame - 6}" rx="12" class="phone"/>')
+    s.append(f'<line x1="6" y1="{top}" x2="{W - 6}" y2="{top}" class="grid"/>')
+    for i, c in enumerate(("var(--c5)", "var(--c3)", "var(--c4)")):
+        s.append(f'<circle cx="{22 + i * 14}" cy="20" r="4.5" fill="{c}"/>')
+    s.append(_text(76, 24, app, "small b", "start"))
+    if url:
+        s.append(f'<rect x="{W / 2 - 150}" y="11" width="300" height="17" rx="8" class="wf-bar"/>')
+        s.append(_text(W / 2, 23, url, "tiny mut"))
+    if sidebar:
+        s.append(f'<rect x="12" y="{top + 4}" width="{side_w}" height="{H_frame - top - 10}" rx="8" class="wf-bar" fill-opacity=".6"/>')
+    if panel:
+        px = W - 14 - pan_w
+        s.append(f'<rect x="{px}" y="{top + 4}" width="{pan_w}" height="{H_frame - top - 10}" rx="8" class="wf-bar" fill-opacity=".45"/>')
+    s += body + note_svg
+    s.append("</svg>")
+    return _fig("".join(s), title + " (illustrative wireframe, not a real product screenshot)", caption, alt or title)
+
+
+# ---------------------------------------------------------------- automation workflow canvas
+_KIND = {"trigger": ("var(--c4)", "TRIGGER"), "action": ("var(--c1)", "ACTION"), "ai": ("var(--c2)", "AI STEP"),
+         "logic": ("var(--c3)", "LOGIC"), "output": ("var(--c5)", "OUTPUT"), "human": ("var(--c6)", "HUMAN"),
+         "data": ("var(--c6)", "DATA")}
+
+
+def workflow(title, nodes, branch=None, caption="", alt="", per_row=4):
+    """Automation canvas in the style of n8n / Make / Zapier. nodes: list of [kind, label, detail].
+    branch: optional {"paths": [[edge_label, [[kind,label,detail], ...]], [edge_label, [...]]]} drawn after the last node."""
+    W = 720
+    n = len(nodes)
+    per_row = min(per_row, max(1, n))
+    gap = 34
+    bw = (W - 20 - (per_row - 1) * gap) / per_row
+    allnodes = list(nodes) + [nd for _, ch in (branch or {}).get("paths", []) for nd in ch]
+    def need(nd, w):
+        ll = len(wrap(nd[1], max(10, int((w - 22) / 6.6))))
+        dl = len(wrap(nd[2], max(12, int((w - 22) / 5.3)))) if len(nd) > 2 and nd[2] else 0
+        return 33 + 13 * ll + (4 + 11 * dl if dl else 0) + 8
+    bh = max(84, max(need(nd, bw) for nd in allnodes))
+    rows = math.ceil(n / per_row)
+    pos = []
+    for i in range(n):
+        r, c = divmod(i, per_row)
+        if r % 2 == 1:
+            c = per_row - 1 - c  # snake so arrows stay short
+        pos.append((10 + c * (bw + gap), 8 + r * (bh + 40)))
+    H = 8 + rows * (bh + 40)
+    bpaths = (branch or {}).get("paths", [])
+    if bpaths:
+        H += len(bpaths) * (bh + 26) + 10
+    s = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ahw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="arrowhead"/></marker></defs>']
+
+    def node(x, y, w, k, label, detail):
+        col, tag = _KIND.get(k, _KIND["action"])
+        s.append(f'<rect x="{x:.1f}" y="{y}" width="{w:.1f}" height="{bh}" rx="10" class="node"/>')
+        s.append(f'<rect x="{x:.1f}" y="{y}" width="7" height="{bh}" rx="3" fill="{col}"/>')
+        s.append(f'<text x="{x + 16:.1f}" y="{y + 16}" class="tiny b" text-anchor="start" fill="{col}" style="fill:{col}">{tag}</text>')
+        s.append(_text(x + 16, y + 33, label, "small b", "start", width=max(10, int((w - 22) / 6.6)), lh=13))
+        if detail:
+            nl = len(wrap(label, max(10, int((w - 22) / 6.6))))
+            s.append(_text(x + 16, y + 33 + 13 * nl + 4, detail, "tiny mut", "start", width=max(12, int((w - 22) / 5.3)), lh=11))
+
+    for i, (nd, (x, y)) in enumerate(zip(nodes, pos)):
+        k, label = nd[0], nd[1]
+        node(x, y, bw, k, label, nd[2] if len(nd) > 2 else "")
+        if i < n - 1:
+            x2, y2 = pos[i + 1]
+            if y2 == y:
+                if x2 > x:
+                    s.append(f'<line x1="{x + bw + 2:.1f}" y1="{y + bh / 2}" x2="{x2 - 3:.1f}" y2="{y + bh / 2}" class="edge" marker-end="url(#ahw)"/>')
+                else:
+                    s.append(f'<line x1="{x - 2:.1f}" y1="{y + bh / 2}" x2="{x2 + bw + 3:.1f}" y2="{y + bh / 2}" class="edge" marker-end="url(#ahw)"/>')
+            else:
+                s.append(f'<line x1="{x + bw / 2:.1f}" y1="{y + bh + 2}" x2="{x2 + bw / 2:.1f}" y2="{y2 - 3}" class="edge" marker-end="url(#ahw)"/>')
+    if bpaths:
+        lx, ly = pos[-1]
+        sx, sy = lx + bw / 2, ly + bh
+        y = 8 + rows * (bh + 40)
+        for label, chain in bpaths:
+            m = len(chain)
+            cw = (W - 20 - 110 - (m - 1) * gap) / max(1, m)
+            cw = min(cw, bw)
+            x = 120
+            s.append(f'<path d="M{sx:.1f},{sy + 2} L{sx:.1f},{y - 12} L60,{y - 12} L60,{y + bh / 2} L{x - 3},{y + bh / 2}" class="edge" fill="none" marker-end="url(#ahw)"/>')
+            s.append(f'<rect x="14" y="{y + bh / 2 - 22}" width="92" height="18" rx="9" fill="var(--c3)" fill-opacity=".18" stroke="var(--c3)"/>')
+            s.append(_text(60, y + bh / 2 - 9, label, "tiny b"))
+            for j, nd in enumerate(chain):
+                node(x, y, cw, nd[0], nd[1], nd[2] if len(nd) > 2 else "")
+                if j < m - 1:
+                    s.append(f'<line x1="{x + cw + 2:.1f}" y1="{y + bh / 2}" x2="{x + cw + gap - 3:.1f}" y2="{y + bh / 2}" class="edge" marker-end="url(#ahw)"/>')
+                x += cw + gap
+            y += bh + 26
+    s.append("</svg>")
+    names = {"trigger": "Trigger (starts the flow)", "action": "Action", "ai": "AI step", "logic": "Logic (filter, IF, router)",
+             "output": "Output", "human": "Human step", "data": "Data"}
+    legend = " · ".join(names[k] for k in sorted({nd[0] for nd in nodes} | {nd[0] for _, ch in bpaths for nd in ch}) if k in names)
+    cap = (caption + " " if caption else "") + f"Node types shown: {legend}."
+    return _fig("".join(s), title, cap, alt or "Workflow: " + " → ".join(nd[1] for nd in nodes))
+
+
 # ---------------------------------------------------------------- dispatcher
 def render(spec):
     t = spec.pop("type")
@@ -635,5 +868,7 @@ def render(spec):
         "loop": lambda d: loop(d["title"], d["nodes"], d.get("caption", ""), d.get("alt", ""), d.get("kind", "R"), d.get("center")),
         "canvas": lambda d: canvas(d["title"], d.get("cols", 3), d["cells"], d.get("caption", ""), d.get("alt", "")),
         "concentric": lambda d: concentric(d["title"], d["rings"], d.get("caption", ""), d.get("alt", "")),
+        "window": lambda d: window(d["title"], d.get("app", ""), d.get("main", []), d.get("sidebar"), d.get("panel"), d.get("notes"), d.get("url", ""), d.get("caption", ""), d.get("alt", "")),
+        "workflow": lambda d: workflow(d["title"], d["nodes"], d.get("branch"), d.get("caption", ""), d.get("alt", ""), d.get("per_row", 4)),
     }[t]
     return fn(spec)

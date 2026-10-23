@@ -26,6 +26,7 @@ If `python` isn't found in a new terminal, run: `$env:Path = [Environment]::GetE
 | Deliverable | Status | Evidence |
 |---|---|---|
 | Source assessment, coverage matrix, gap analysis | Done | `source-coverage-matrix.md`, `curriculum-gap-analysis.md` |
+| AI Tools Lab (Modules 13–23) | Drafted, built, checked (23 Oct 2026) | 11 classes, basic → advanced, 60+ labs, new `window` (desktop app wireframe) and `workflow` (automation canvas) chart types; `pdf/AI-Tools-Lab.pdf` |
 | 12 modules | Drafted, built, checked | 12 pages, 127 inline visuals (charts, diagrams, canvases, wireframes, comparison figures), a quiz on every page, exercises with model answers |
 | Framework library | Done | 29 frameworks + selection guide |
 | Case studies | Done | 12 cases (+ a full AI support case inside Module 12) |
@@ -35,7 +36,7 @@ If `python` isn't found in a new terminal, run: `$env:Path = [Environment]::GetE
 | Datasets | Done | 11 synthetic CSVs |
 | Glossary | Done | 175 terms |
 | Interactive site | Done | 28/28 functional tests pass (search, quizzes, progress, theme, filters, glossary, downloads, back-to-top, mobile menu, no horizontal scroll at 375 px) |
-| PDFs | Done | Complete handbook 444 pp; 12 module PDFs; 4 library PDFs; 0 blank pages, 0 margin overflows flagged |
+| PDFs | Done | Complete handbook 570 pp; 23 module PDFs; AI Tools Lab 126 pp; 4 library PDFs; 0 blank pages, 0 margin overflows flagged |
 | Links | Done | 73/73 external links returned OK on the last check; 0 broken internal links |
 | SQL examples | Done | 7/7 run against the datasets |
 | Standalone diagrams | Done | 126 SVGs in `diagrams/` |
@@ -47,8 +48,11 @@ If `python` isn't found in a new terminal, run: `$env:Path = [Environment]::GetE
 4. **No real product screenshots by design.** All UI images are clearly labelled illustrative wireframes. No Figma file was created (the Figma connector needs authorisation via /mcp).
 5. **Hosted publicly on Netlify** at https://pm-master-handbook-varun.netlify.app (team-login protection switched off on request, 23 Oct 2026). It still works locally from `file://` too.
 6. **Human review recommended.** Numbers in examples were re-computed by script and SQL outputs come from real query runs, but the prose has not had an independent human/editorial review.
-7. **Fast-changing facts** (AI tool features, prices, cloud product names) are described generically with links to official docs; re-check before relying on them.
+7. **Fast-changing facts** (AI tool features, prices, cloud product names) are described generically with links to official docs; re-check before relying on them. AI Tools Lab prices and course listings were checked by web search on 23 Oct 2026; several came from third-party reviews where official pages were unavailable, and are labelled as approximate.
 8. Lectures **44** and **54** had no recordings and are not summarised.
+9. **AI Tools Lab screens are illustrative wireframes**, not screenshots, by design; button names may differ in the live tools.
+10. **PDF rendering on Linux**: `pdf.py` falls back to a local Chromium when Edge is missing (set `PMH_CHROMIUM` to its path). Fonts may differ slightly from PDFs rendered on Windows.
+11. **External links in Modules 13–23 were not live-checked** (the cloud session that wrote them could not reach most outside sites). They point to official docs, pricing pages or course pages found by web search on 23 Oct 2026. Run `python -I -X utf8 _build/validate.py` on a normal connection to check all 137 external URLs; `validation-reports/link-check.md` still reflects the earlier 73-URL check.
 
 ## Ideas for the next iteration
 - Verify module titles against the curriculum screenshot and adjust.

@@ -4,7 +4,7 @@ title: Start Here
 
 ## What this handbook is
 
-A visual, structured study system for Product Management, built from **your 55-lecture course study guide** and extended to the **12 Product Core modules**. It is designed for three jobs: learning, applying, and interview preparation.
+A visual, structured study system for Product Management, built from **your 55-lecture course study guide** and extended to the **12 Product Core modules** plus an **11-class AI Tools Lab** (Modules 13 to 23). It is designed for three jobs: learning, applying, and interview preparation.
 
 !!! source "Source integrity"
     - Content marked **"From your course notes"** is preserved from your PDF study guide, with the guide's own corrections applied.
@@ -29,7 +29,8 @@ Around those you will find worked examples, visuals, common mistakes, interview 
 2. **Modules 4 → 7**: framing, UX, communication, analytics (the highest-leverage skills in interviews).
 3. **Modules 8 → 9**: growth and technical fluency.
 4. **Modules 10 → 12**: AI foundations, building with AI, agentic systems.
-5. Throughout: use the **Framework Library**, **Case Studies** and **Interview Handbook**; complete the **Projects** for your portfolio.
+5. **Modules 13 → 23 (AI Tools Lab)**: hands-on classes on Claude, Claude Code, Lovable, Replit, Figma, Notion and PRD tools, Zapier, Make and n8n, WhatsApp and Slack chatbots, voice agents, and learning paths. Each class goes from basic to advanced with step-by-step labs and pictures, and the whole lab is also one practice PDF (**AI-Tools-Lab.pdf**).
+6. Throughout: use the **Framework Library**, **Case Studies** and **Interview Handbook**; complete the **Projects** for your portfolio.
 
 ## Using the HTML version
 

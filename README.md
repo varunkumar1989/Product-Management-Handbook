@@ -7,19 +7,20 @@ A visual, interactive Product Management study system built from your 55-lecture
 - **Interactive site:** `html/Interactive-PM-Handbook/index.html` — works offline straight from disk (no server, no API keys).
 - **Entry point listing everything:** `index.html` in this folder.
 - **All links in one file:** [`LINKS.md`](./LINKS.md): live pages and PDFs for every module, plus the resume and case-study portfolio.
-- **PDFs:** `pdf/` — the complete handbook (444 pages, page-numbered contents, 527 bookmarks), 12 module PDFs, and separate PDFs for the Framework Library, Case Studies, Practical Projects and Interview Handbook.
+- **PDFs:** `pdf/` — the AI Tools Lab (`AI-Tools-Lab.pdf`), the complete handbook (570 pages, page-numbered contents, 730 bookmarks), 23 module PDFs, and separate PDFs for the Framework Library, Case Studies, Practical Projects and Interview Handbook.
 
 ## What's inside
 | Part | Contents |
 |---|---|
 | 12 modules | Fundamentals · Strategy · Discovery · Prioritisation · UX · Communication · Analytics · Growth · Tech & System Design · LLMs/RAG · Vibe Coding · Agentic AI |
+| AI Tools Lab (Modules 13–23) | Tools landscape and costs · Claude for daily work · Claude Code · Lovable · Replit and other builders · Figma · Notion and PRD tools · Zapier, Make and n8n · WhatsApp, Slack and web chatbots · Voice agents · Learning paths and courses — basic to advanced, with labs and pictures; also as `pdf/AI-Tools-Lab.pdf` |
 | Framework Library | 29 frameworks + a "which framework should I use?" selection guide |
 | Case Study Library | 12 cases (food delivery, ride-hailing, e-commerce, streaming, music, messaging, collaboration, card onboarding, payments, learning, PLG, AI finance assistant) |
 | Practical Projects | 5 end-to-end portfolio projects with datasets and model solutions |
 | Interview Handbook | 106 questions in 13 categories, scorecard and practice worksheet |
 | Templates | 10 reusable templates (PRD, one-pager, experiment plan/readout, launch checklist, stakeholder map/DACI, research kit, RICE/WSJF/roadmap, metrics/OKR/KPI tree, AI PRD/eval, decision log/retro) + the Module 11 starter app |
 | Datasets | 11 synthetic CSVs (see `datasets/README.md`) |
-| Glossary | 175 searchable terms |
+| Glossary | 194 searchable terms |
 
 ## Honesty rules used throughout
 - **"From your course notes"** boxes preserve your study guide's content, including its own corrections of inaccurate lecture statements.

@@ -248,3 +248,8 @@ svg .wf-input{fill:var(--surface);stroke:var(--muted)} svg .wf-warn{fill:var(--w
 .toc-list .dots{flex:1;border-bottom:1px dotted var(--muted);transform:translateY(-3px)}
 .toc-list .pg{min-width:2.2em;text-align:right;font-variant-numeric:tabular-nums}
 .toc-list a{color:inherit;text-decoration:none}
+
+/* Mobile: canvas grids use at most two columns and long words wrap, so they never widen the page */
+@media (max-width:600px){.canvas{grid-template-columns:repeat(2,minmax(0,1fr))!important}.canvas .cv{overflow-wrap:anywhere}}
+/* Print: let long cell text wrap so wide tables fit the A4 page instead of being cut off */
+@media print{.article td,.article th{overflow-wrap:anywhere}}
