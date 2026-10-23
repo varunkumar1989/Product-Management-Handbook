@@ -2,10 +2,11 @@
 
     python -I -X utf8 _build/site_test.py [screenshot-dir]
 """
-import sys
+import os, sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
+N = len(list((Path(__file__).resolve().parent.parent / 'content' / 'modules').glob('m*.md')))  # number of modules
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "html" / "Interactive-PM-Handbook"
 SHOTS = Path(sys.argv[1]) if len(sys.argv) > 1 else None
@@ -17,7 +18,11 @@ def check(name, cond, detail=""):
 
 
 with sync_playwright() as pw:
-    b = pw.chromium.launch(channel="msedge", headless=True)
+    try:
+        b = pw.chromium.launch(channel="msedge", headless=True)
+    except Exception:  # no Edge (e.g. Linux): local Chromium via PMH_CHROMIUM, else Playwright's own
+        exe = os.environ.get("PMH_CHROMIUM")
+        b = pw.chromium.launch(headless=True, executable_path=exe) if exe else pw.chromium.launch(headless=True)
     ctx = b.new_context(viewport={"width": 1280, "height": 900})
     p = ctx.new_page()
     errors = []
@@ -32,7 +37,7 @@ with sync_playwright() as pw:
     # dashboard
     p.goto((SITE / "index.html").as_uri())
     cards = p.locator("#dashModules .card").count()
-    check("Dashboard lists 12 module cards", cards == 12, f"{cards} cards")
+    check(f"Dashboard lists {N} module cards", cards == N, f"{cards} cards")
     check("Dashboard shows current focus", "Current focus" in p.inner_text("#currentFocus"))
 
     # search
@@ -77,7 +82,7 @@ with sync_playwright() as pw:
     p.goto((SITE / "index.html").as_uri())
     done = p.locator('.sidebar a[data-mod-link="m07"].done').count()
     check("Marking a module complete updates the sidebar indicator", done == 1)
-    check("Overall progress counter updates", "1 / 12" in p.inner_text("[data-overall]"))
+    check("Overall progress counter updates", f"1 / {N}" in p.inner_text("[data-overall]"))
 
     # expand all details
     p.goto((SITE / "m01.html").as_uri())

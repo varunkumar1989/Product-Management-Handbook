@@ -173,3 +173,22 @@
 - {term: "Wireframe", def: "A low-fidelity layout showing structure and content priority without visual polish.", module: 5}
 - {term: "Workflow (automation)", def: "A predefined sequence of steps executed automatically; more predictable than an agent.", module: 12}
 - {term: "WSJF", def: "Weighted Shortest Job First: Cost of Delay ÷ job size.", module: 4}
+- {term: "BSP (Business Solution Provider)", def: "A Meta-approved company that connects businesses to the WhatsApp Business Platform and usually adds an inbox, broadcasts and bot builders.", module: 21}
+- {term: "Barge-in", def: "When a caller interrupts a voice agent mid-sentence; good voice platforms stop speaking and listen.", module: 22}
+- {term: "CLAUDE.md", def: "A file in a project folder that Claude Code reads at the start of every session: what the project is, the stack, rules and commands.", module: 15}
+- {term: "Connector (Claude)", def: "A permission that lets Claude use another app on your behalf, such as Gmail, Google Calendar, Drive, Slack, GitHub or a custom MCP server.", module: 14}
+- {term: "Containment rate", def: "The share of chatbot or voice-agent conversations fully resolved without a human.", module: 21}
+- {term: "Credits (AI tools)", def: "The usage unit many AI tools bill in, such as Lovable messages, Make operations or Figma AI actions; bigger tasks use more.", module: 13}
+- {term: "Hook (Claude Code)", def: "A script that runs automatically at a set point, for example before a tool runs or after a file is edited, to enforce rules.", module: 15}
+- {term: "MCP Server Trigger", def: "An n8n node that exposes a workflow as an MCP server, so Claude or Claude Code can call it as a tool.", module: 20}
+- {term: "OAuth", def: "A sign-in method that lets one app act in another (for example n8n in Gmail) without sharing your password; you approve specific permissions.", module: 20}
+- {term: "Plan mode", def: "A Claude Code mode in which Claude researches and proposes a plan without editing files.", module: 15}
+- {term: "Project (Claude)", def: "A Claude workspace with custom instructions and knowledge files that every chat inside it can use.", module: 14}
+- {term: "Row-level security (RLS)", def: "Database rules that decide which rows each user may read or change, for example only their own bookings.", module: 16}
+- {term: "Skill (Claude)", def: "A packaged set of instructions, examples and optional scripts that teaches Claude a repeatable task; Claude loads it when the task matches.", module: 14}
+- {term: "Speech-to-text (STT)", def: "Software that turns spoken audio into text in real time; the first step in a voice agent.", module: 22}
+- {term: "Subagent", def: "A Claude Code helper with its own instructions, tools and context, used for focused tasks such as review or testing.", module: 15}
+- {term: "Template message (WhatsApp)", def: "A pre-approved message format a business must use to start a WhatsApp conversation outside the 24-hour customer service window.", module: 21}
+- {term: "Text-to-speech (TTS)", def: "Software that turns text into a spoken voice; the last step before a voice agent speaks.", module: 22}
+- {term: "Trigger (automation)", def: "The event that starts an automation, such as a new email, form response, schedule or webhook call.", module: 20}
+- {term: "24-hour customer service window", def: "The period after a customer messages a business on WhatsApp in which the business can reply without a template.", module: 21}

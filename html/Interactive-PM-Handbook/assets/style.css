@@ -248,3 +248,17 @@ svg .wf-input{fill:var(--surface);stroke:var(--muted)} svg .wf-warn{fill:var(--w
 .toc-list .dots{flex:1;border-bottom:1px dotted var(--muted);transform:translateY(-3px)}
 .toc-list .pg{min-width:2.2em;text-align:right;font-variant-numeric:tabular-nums}
 .toc-list a{color:inherit;text-decoration:none}
+
+/* Mobile: canvas grids use at most two columns and long words wrap, so they never widen the page */
+@media (max-width:600px){.canvas{grid-template-columns:repeat(2,minmax(0,1fr))!important}.canvas .cv{overflow-wrap:anywhere}}
+/* Print: let long cell text wrap so wide tables fit the A4 page instead of being cut off */
+@media print{.article td,.article th{overflow-wrap:anywhere}}
+
+/* Author credit */
+.author{display:flex;align-items:center;gap:12px}
+.author img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--line)}
+.author small{display:block;font-size:.75rem;opacity:.8;letter-spacing:.04em;text-transform:uppercase}
+.author b{display:block;font-size:1.05rem}
+.hero-author{margin:6px 0 10px}.hero-author img{border-color:#fff}
+.side-author{margin:18px 9px 6px;padding-top:12px;border-top:1px solid var(--line)}.side-author img{width:40px;height:40px}
+.cover-author{margin-top:22pt}.cover-author img{width:96px;height:96px;border:3px solid #fff}.cover-author b{font-size:16pt;color:#fff}.cover-author small{color:#C7D2FE}

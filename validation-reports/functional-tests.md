@@ -7,7 +7,7 @@ Automated run in Microsoft Edge (headless, Playwright) against the local `file:/
 | Check | Result | Detail |
 |---|---|---|
 | All site pages load without JavaScript errors | PASS |  |
-| Dashboard lists 12 module cards | PASS | 12 cards |
+| Dashboard lists 23 module cards | PASS | 23 cards |
 | Dashboard shows current focus | PASS |  |
 | Search returns results for 'contribution margin' | PASS | 12 hits |
 | Clicking a search result navigates to the target page | PASS | m07.html#m07-unit-economics-contribution-margin-cac-ltv-payback |
@@ -24,12 +24,12 @@ Automated run in Microsoft Edge (headless, Playwright) against the local `file:/
 | Interview page text filter narrows the list | PASS | 8 sets match 'RAG' |
 | Interview handbook contains ≥ 100 questions | PASS | 106 questions |
 | Model answers expand on click | PASS |  |
-| Glossary search filters terms | PASS | 1 of 175 shown for 'idempot' |
+| Glossary search filters terms | PASS | 1 of 194 shown for 'idempot' |
 | Templates page offers downloadable files | PASS | 22 download links |
 | All template/dataset download links resolve to files | PASS |  |
 | Module page links to its PDF and the file exists | PASS | pdf/Module-07-Analytics.pdf |
 | Back-to-top button appears after scrolling | PASS |  |
-| Back-to-top returns to the top | PASS | scrollY=48 |
+| Back-to-top returns to the top | PASS | scrollY=45 |
 | Quiz options are keyboard-focusable | PASS |  |
 | No horizontal page scroll at 375 px width | PASS |  |
 | Sidebar hidden on mobile until the menu is opened | PASS |  |

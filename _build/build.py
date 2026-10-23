@@ -25,12 +25,17 @@ PRINT = ROOT / "_build" / "print"
 ASSETS = ROOT / "_build" / "assets"
 VERSION = "v0.1 · " + datetime.date.today().strftime("%d %B %Y")
 TITLE = "Product Management Master Handbook"
+AUTHOR = "Varun Kumar"
 
 MODULE_FILES = {  # slug used for module PDFs
     1: "Module-01-Fundamentals", 2: "Module-02-Strategy", 3: "Module-03-Discovery", 4: "Module-04-Prioritization",
     5: "Module-05-UX-Design", 6: "Module-06-Communication", 7: "Module-07-Analytics", 8: "Module-08-Growth",
     9: "Module-09-Tech-System-Design", 10: "Module-10-LLM-RAG", 11: "Module-11-Vibe-Coding", 12: "Module-12-Agentic-AI",
+    13: "Module-13-AI-Tools-Landscape", 14: "Module-14-Claude-Daily-Work", 15: "Module-15-Claude-Code", 16: "Module-16-Lovable",
+    17: "Module-17-Replit-and-App-Builders", 18: "Module-18-Figma", 19: "Module-19-Notion-and-PRD-Tools", 20: "Module-20-Automation",
+    21: "Module-21-Business-Chatbots", 22: "Module-22-Voice-Agents", 23: "Module-23-Learning-Paths",
 }
+CORE_MAX = 12  # modules above this number form the AI Tools Lab track
 COLLECTIONS = [
     # key, title, dir, blurb
     ("frameworks", "Framework Library", "frameworks", "29 frameworks, each with a visual model, worked example, usage criteria, limitations and a reusable template."),
@@ -233,6 +238,8 @@ def nav_html(modules, current):
 
     h = [a("index.html", "Learning dashboard", "home"), a("start.html", "Start here", "start"), "<h5>Product Core modules</h5>"]
     for m in modules:
+        if m["n"] == CORE_MAX + 1:
+            h.append("<h5>AI Tools Lab</h5>")
         h.append(a(m["url"], m["title"], m["id"], m["n"], m["id"]))
     h.append("<h5>Libraries</h5>")
     for key, title, _, _ in COLLECTIONS:
@@ -262,7 +269,8 @@ def site_page(key, title, body, modules, head="", extra_js="", pdf_link=None):
 </header>
 <div class="shell">
 <nav class="sidebar" id="sidebar" aria-label="Handbook navigation">{nav_html(modules, key)}
-<h5>Progress</h5><div style="padding:0 9px"><div class="progressbar"><i data-overall-bar></i></div><small class="mut" style="color:var(--muted)">Modules completed: <b data-overall>0 / 12</b></small><br><button class="iconbtn" style="margin-top:8px" data-reset-progress type="button">Reset progress</button></div>
+<h5>Progress</h5><div style="padding:0 9px"><div class="progressbar"><i data-overall-bar></i></div><small class="mut" style="color:var(--muted)">Modules completed: <b data-overall>0 / {len(modules)}</b></small><br><button class="iconbtn" style="margin-top:8px" data-reset-progress type="button">Reset progress</button></div>
+<div class="author side-author"><img src="assets/author.png" alt="{AUTHOR}"><div><small>Created by</small><b>{AUTHOR}</b></div></div>
 </nav>
 <main class="main" id="content"><div class="article">
 {body}
@@ -441,10 +449,13 @@ def build():
     written = sum(1 for m in modules if not m.get("stub"))
     lib = "".join(f'<a class="card" href="{k}.html"><span class="tag">Library</span><h3>{escape(t)}</h3><p>{escape(b)}</p><div class="meta">{len(coll_data[k])} entries</div></a>' for k, t, _, b in COLLECTIONS)
     lib += '<a class="card" href="templates.html"><span class="tag">Library</span><h3>Templates &amp; datasets</h3><p>Reusable PM artefacts and synthetic practice data.</p></a>'
+    if (ROOT / "pdf" / "AI-Tools-Lab.pdf").exists():
+        lib += '<a class="card" href="pdf/AI-Tools-Lab.pdf"><span class="tag">PDF</span><h3>AI Tools Lab (PDF)</h3><p>Every AI tools class in one practice PDF, with step-by-step labs and pictures.</p></a>'
     lib += '<a class="card" href="glossary.html"><span class="tag">Reference</span><h3>Glossary</h3><p>Searchable definitions.</p></a>'
     dash = f"""<section class="hero"><div class="kicker">{VERSION}</div><h1>{TITLE}</h1>
-<p>A visual, interactive study system built from your 55-lecture course notes and extended to the 12 Product Core modules. Progress is saved in this browser only.</p>
-<div class="stat"><div><b data-overall>0 / 12</b>modules completed</div><div><b>{written} / 12</b>modules written</div><div><b id="totalHours">—</b>planned study time</div></div>
+<div class="author hero-author"><img src="assets/author.png" alt="{AUTHOR}"><div><small>Created by</small><b>{AUTHOR}</b></div></div>
+<p>A visual, interactive study system built from your 55-lecture course notes, extended to the 12 Product Core modules and an {len(modules) - CORE_MAX}-class AI Tools Lab. Progress is saved in this browser only.</p>
+<div class="stat"><div><b data-overall>0 / {len(modules)}</b>modules completed</div><div><b>{written} / {len(modules)}</b>modules written</div><div><b id="totalHours">—</b>planned study time</div></div>
 <div class="progressbar" style="margin-top:14px"><i data-overall-bar></i></div><p id="currentFocus" style="margin-top:10px"></p></section>
 <h2>Learning dashboard</h2><div class="cards" id="dashModules"></div>
 <h2>Libraries</h2><div class="cards">{lib}</div>
@@ -464,7 +475,7 @@ def build():
 
     # ---- project entry point
     write_root_index(modules, coll_data)
-    print(f"built: {written}/12 modules written; " + ", ".join(f"{k}:{len(v)}" for k, v in coll_data.items()) + f"; templates:{len(tfiles)}; datasets:{len(dfiles)}; glossary:{len(g)}; search sections:{len(index)}")
+    print(f"built: {written}/{len(modules)} modules written; " + ", ".join(f"{k}:{len(v)}" for k, v in coll_data.items()) + f"; templates:{len(tfiles)}; datasets:{len(dfiles)}; glossary:{len(g)}; search sections:{len(index)}")
 
 
 # ------------------------------------------------------------------ print documents
@@ -474,7 +485,8 @@ def print_doc(title, body, css="../assets/style.css"):
 
 
 def cover(title, subtitle, extra=""):
-    return f"""<section class="cover"><div><div class="stripe"></div><h1>{escape(title)}</h1><div class="sub">{escape(subtitle)}</div></div>
+    return f"""<section class="cover"><div><div class="stripe"></div><h1>{escape(title)}</h1><div class="sub">{escape(subtitle)}</div>
+<div class="author cover-author"><img src="../assets/author.png" alt="{AUTHOR}"><div><small>Author</small><b>{AUTHOR}</b></div></div></div>
 <div class="meta">{extra}<br>{VERSION}<br>Built from the 55-lecture course study guide and extended to the 12-module Product Core curriculum.<br>
 Hypothetical examples are labelled; no real company results are invented.</div></section>"""
 
@@ -545,6 +557,21 @@ def write_print(modules, coll_data, simple_html, glossary, tfiles):
     (PRINT / "Complete-PM-Master-Handbook.html").write_text(print_doc(TITLE, body), encoding="utf-8")
     json.dump({"toc": toc}, open(PRINT / "complete-toc.json", "w", encoding="utf-8"))
 
+    # AI Tools Lab: every class above the Product Core in one practice PDF
+    lab = [m for m in modules if m["n"] > CORE_MAX and not m.get("stub")]
+    if lab:
+        ltoc, lblocks = [], []
+        for m in lab:
+            lblocks.append(mod_block(m))
+            ltoc.append((1, f"Module {m['n']}: {m['title']}", m["id"]))
+            for h, lab_, t in m["toc"]:
+                ltoc.append((2, f"{lab_} {t}", h))
+        ltoc_html = '<section class="toc-page"><h1>Contents</h1><ul class="toc-list">' + "".join(
+            f'<li class="l{lv}" data-find="{escape(t)}"><a href="#{a}"><span>{escape(t)}</span></a><span class="dots"></span><span class="pg" data-pg="{a}">·</span></li>' for lv, t, a in ltoc) + "</ul></section>"
+        body = cover("AI Tools Lab", "Hands-on classes on Claude, Claude Code, Lovable, Replit, Figma, Notion, PRD tools, Zapier, Make, n8n, business chatbots and voice agents, from basic to advanced",
+                     "Product Management Master Handbook") + ltoc_html + "".join(lblocks)
+        (PRINT / "AI-Tools-Lab.html").write_text(print_doc("AI Tools Lab", body), encoding="utf-8")
+
     for key, fn in (("frameworks", "Framework-Library"), ("cases", "Case-Study-Library"), ("projects", "Practical-Projects"), ("interview", "Interview-Handbook")):
         t = next(c[1] for c in COLLECTIONS if c[0] == key)
         b, ents = coll_block(key, t, next(c[3] for c in COLLECTIONS if c[0] == key), 0)
@@ -568,7 +595,7 @@ def write_root_index(modules, coll_data):
 <style>body{{font:16px/1.6 "Segoe UI",system-ui,sans-serif;margin:0;color:#101828;background:#fff}}main{{max-width:900px;margin:0 auto;padding:32px 20px}}h1{{margin:.2em 0}}
 .hero{{background:linear-gradient(135deg,#101828,#1d3a8a 60%,#7C3AED 140%);color:#fff;border-radius:16px;padding:28px}}.hero a{{color:#fff;font-weight:700}}
 table{{border-collapse:collapse;width:100%}}td,th{{border-bottom:1px solid #E4E7EC;padding:8px;text-align:left}}a{{color:#2563EB}}ul{{padding-left:1.2em}}</style></head><body><main>
-<div class="hero"><h1>{TITLE}</h1><p>{VERSION}</p><p><a href="html/Interactive-PM-Handbook/index.html">Open the interactive handbook →</a></p></div>
+<div class="hero"><h1>{TITLE}</h1><p style="display:flex;align-items:center;gap:12px"><img src="_build/assets/author.png" alt="{AUTHOR}" style="width:56px;height:56px;border-radius:50%;border:2px solid #fff"> <span>Created by <b>{AUTHOR}</b> · {VERSION}</span></p><p><a href="html/Interactive-PM-Handbook/index.html">Open the interactive handbook →</a></p></div>
 <h2>Modules</h2><table><thead><tr><th>#</th><th>Module (HTML)</th><th>Status</th><th>PDF</th></tr></thead><tbody>{"".join(rows)}</tbody></table>
 <h2>Libraries</h2><ul>
 <li><a href="html/Interactive-PM-Handbook/frameworks.html">Framework library</a> ({len(coll_data.get("frameworks", []))})</li>
@@ -577,7 +604,7 @@ table{{border-collapse:collapse;width:100%}}td,th{{border-bottom:1px solid #E4E7
 <li><a href="html/Interactive-PM-Handbook/interview.html">Interview handbook</a> ({len(coll_data.get("interview", []))} sets)</li>
 <li><a href="html/Interactive-PM-Handbook/templates.html">Templates &amp; datasets</a></li>
 <li><a href="html/Interactive-PM-Handbook/glossary.html">Glossary</a></li></ul>
-<h2>Project files</h2><ul><li>{comp}</li><li><a href="README.md">README</a> · <a href="PROGRESS.md">PROGRESS</a> · <a href="source-coverage-matrix.md">Source coverage matrix</a> · <a href="curriculum-gap-analysis.md">Curriculum gap analysis</a></li>
+<h2>Project files</h2><ul><li>{comp}</li>{'<li><a href="pdf/AI-Tools-Lab.pdf">AI Tools Lab (PDF)</a></li>' if (ROOT / "pdf" / "AI-Tools-Lab.pdf").exists() else ""}<li><a href="README.md">README</a> · <a href="PROGRESS.md">PROGRESS</a> · <a href="source-coverage-matrix.md">Source coverage matrix</a> · <a href="curriculum-gap-analysis.md">Curriculum gap analysis</a></li>
 <li><a href="validation-reports/">Validation reports</a></li></ul></main></body></html>"""
     (ROOT / "index.html").write_text(html, encoding="utf-8")
 
