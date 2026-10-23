@@ -5,7 +5,7 @@
 A visual, interactive Product Management study system built from your 55-lecture course study guide (`Expanded_PM_AI_and_Tools_Study_Guide.pdf`, which fully contains the Visual edition) and extended to the 12 Product Core modules.
 
 ## Open it
-- **Live (public, anyone with the link):** https://pm-master-handbook-varun.netlify.app — Netlify project `pm-master-handbook-varun`. To publish changes: rebuild, then run `netlify deploy --prod --dir html/Interactive-PM-Handbook --site pm-master-handbook-varun --no-build`.
+- **Live (public, anyone with the link):** https://pm-master-handbook-varun.netlify.app — Netlify project `pm-master-handbook-varun`. **Automatic deploys:** the GitHub Action in `.github/workflows/deploy-netlify.yml` publishes `html/Interactive-PM-Handbook` on every change to `main` once the repository secrets `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID` are set (Actions tab → *Deploy handbook to Netlify* → *Run workflow* deploys on demand). Manual alternative: `netlify deploy --prod --dir html/Interactive-PM-Handbook --site pm-master-handbook-varun --no-build`.
 - **Interactive site:** `html/Interactive-PM-Handbook/index.html` — works offline straight from disk (no server, no API keys).
 - **Entry point listing everything:** `index.html` in this folder.
 - **All links in one file:** [`LINKS.md`](./LINKS.md): live pages and PDFs for every module, plus the resume and case-study portfolio.
