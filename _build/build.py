@@ -25,6 +25,7 @@ PRINT = ROOT / "_build" / "print"
 ASSETS = ROOT / "_build" / "assets"
 VERSION = "v0.1 · " + datetime.date.today().strftime("%d %B %Y")
 TITLE = "Product Management Master Handbook"
+AUTHOR = "Varun Kumar"
 
 MODULE_FILES = {  # slug used for module PDFs
     1: "Module-01-Fundamentals", 2: "Module-02-Strategy", 3: "Module-03-Discovery", 4: "Module-04-Prioritization",
@@ -269,6 +270,7 @@ def site_page(key, title, body, modules, head="", extra_js="", pdf_link=None):
 <div class="shell">
 <nav class="sidebar" id="sidebar" aria-label="Handbook navigation">{nav_html(modules, key)}
 <h5>Progress</h5><div style="padding:0 9px"><div class="progressbar"><i data-overall-bar></i></div><small class="mut" style="color:var(--muted)">Modules completed: <b data-overall>0 / {len(modules)}</b></small><br><button class="iconbtn" style="margin-top:8px" data-reset-progress type="button">Reset progress</button></div>
+<div class="author side-author"><img src="assets/author.png" alt="{AUTHOR}"><div><small>Created by</small><b>{AUTHOR}</b></div></div>
 </nav>
 <main class="main" id="content"><div class="article">
 {body}
@@ -451,6 +453,7 @@ def build():
         lib += '<a class="card" href="pdf/AI-Tools-Lab.pdf"><span class="tag">PDF</span><h3>AI Tools Lab (PDF)</h3><p>Every AI tools class in one practice PDF, with step-by-step labs and pictures.</p></a>'
     lib += '<a class="card" href="glossary.html"><span class="tag">Reference</span><h3>Glossary</h3><p>Searchable definitions.</p></a>'
     dash = f"""<section class="hero"><div class="kicker">{VERSION}</div><h1>{TITLE}</h1>
+<div class="author hero-author"><img src="assets/author.png" alt="{AUTHOR}"><div><small>Created by</small><b>{AUTHOR}</b></div></div>
 <p>A visual, interactive study system built from your 55-lecture course notes, extended to the 12 Product Core modules and an {len(modules) - CORE_MAX}-class AI Tools Lab. Progress is saved in this browser only.</p>
 <div class="stat"><div><b data-overall>0 / {len(modules)}</b>modules completed</div><div><b>{written} / {len(modules)}</b>modules written</div><div><b id="totalHours">—</b>planned study time</div></div>
 <div class="progressbar" style="margin-top:14px"><i data-overall-bar></i></div><p id="currentFocus" style="margin-top:10px"></p></section>
@@ -482,7 +485,8 @@ def print_doc(title, body, css="../assets/style.css"):
 
 
 def cover(title, subtitle, extra=""):
-    return f"""<section class="cover"><div><div class="stripe"></div><h1>{escape(title)}</h1><div class="sub">{escape(subtitle)}</div></div>
+    return f"""<section class="cover"><div><div class="stripe"></div><h1>{escape(title)}</h1><div class="sub">{escape(subtitle)}</div>
+<div class="author cover-author"><img src="../assets/author.png" alt="{AUTHOR}"><div><small>Author</small><b>{AUTHOR}</b></div></div></div>
 <div class="meta">{extra}<br>{VERSION}<br>Built from the 55-lecture course study guide and extended to the 12-module Product Core curriculum.<br>
 Hypothetical examples are labelled; no real company results are invented.</div></section>"""
 
@@ -591,7 +595,7 @@ def write_root_index(modules, coll_data):
 <style>body{{font:16px/1.6 "Segoe UI",system-ui,sans-serif;margin:0;color:#101828;background:#fff}}main{{max-width:900px;margin:0 auto;padding:32px 20px}}h1{{margin:.2em 0}}
 .hero{{background:linear-gradient(135deg,#101828,#1d3a8a 60%,#7C3AED 140%);color:#fff;border-radius:16px;padding:28px}}.hero a{{color:#fff;font-weight:700}}
 table{{border-collapse:collapse;width:100%}}td,th{{border-bottom:1px solid #E4E7EC;padding:8px;text-align:left}}a{{color:#2563EB}}ul{{padding-left:1.2em}}</style></head><body><main>
-<div class="hero"><h1>{TITLE}</h1><p>{VERSION}</p><p><a href="html/Interactive-PM-Handbook/index.html">Open the interactive handbook →</a></p></div>
+<div class="hero"><h1>{TITLE}</h1><p style="display:flex;align-items:center;gap:12px"><img src="_build/assets/author.png" alt="{AUTHOR}" style="width:56px;height:56px;border-radius:50%;border:2px solid #fff"> <span>Created by <b>{AUTHOR}</b> · {VERSION}</span></p><p><a href="html/Interactive-PM-Handbook/index.html">Open the interactive handbook →</a></p></div>
 <h2>Modules</h2><table><thead><tr><th>#</th><th>Module (HTML)</th><th>Status</th><th>PDF</th></tr></thead><tbody>{"".join(rows)}</tbody></table>
 <h2>Libraries</h2><ul>
 <li><a href="html/Interactive-PM-Handbook/frameworks.html">Framework library</a> ({len(coll_data.get("frameworks", []))})</li>

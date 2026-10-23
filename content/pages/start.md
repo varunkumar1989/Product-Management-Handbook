@@ -4,6 +4,8 @@ title: Start Here
 
 ## What this handbook is
 
+**Created by Varun Kumar.**
+
 A visual, structured study system for Product Management, built from **your 55-lecture course study guide** and extended to the **12 Product Core modules** plus an **11-class AI Tools Lab** (Modules 13 to 23). It is designed for three jobs: learning, applying, and interview preparation.
 
 !!! source "Source integrity"

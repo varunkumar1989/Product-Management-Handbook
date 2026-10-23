@@ -1,5 +1,7 @@
 # Product Management Master Handbook
 
+**Author: Varun Kumar**
+
 A visual, interactive Product Management study system built from your 55-lecture course study guide (`Expanded_PM_AI_and_Tools_Study_Guide.pdf`, which fully contains the Visual edition) and extended to the 12 Product Core modules.
 
 ## Open it

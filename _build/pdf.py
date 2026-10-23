@@ -15,7 +15,7 @@ OUT = ROOT / "pdf"
 OUT.mkdir(exist_ok=True)
 
 FOOTER = ('<div style="font-size:8px;width:100%;text-align:center;color:#667085;font-family:Segoe UI,Arial">'
-          'Product Management Master Handbook &nbsp;·&nbsp; page <span class="pageNumber"></span> of <span class="totalPages"></span></div>')
+          'Product Management Master Handbook &nbsp;·&nbsp; by Varun Kumar &nbsp;·&nbsp; page <span class="pageNumber"></span> of <span class="totalPages"></span></div>')
 
 
 def render(page, html_path, pdf_path):
