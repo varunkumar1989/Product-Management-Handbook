@@ -1,0 +1,38 @@
+# Publishes the interactive handbook (html/Interactive-PM-Handbook) to Netlify
+# whenever main changes, or on demand from the Actions tab.
+# Needs two repository secrets: NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID.
+name: Deploy handbook to Netlify
+
+on:
+  push:
+    branches: [main]
+    paths: ["html/Interactive-PM-Handbook/**", ".github/workflows/deploy-netlify.yml"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Netlify secrets
+        id: secrets
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ] || [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::warning::Add NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID under Settings → Secrets and variables → Actions to enable deploys."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.secrets.outputs.ready == 'true'
+        with:
+          node-version: 20
+
+      - name: Deploy to Netlify (production)
+        if: steps.secrets.outputs.ready == 'true'
+        run: npx --yes netlify-cli deploy --prod --no-build --dir html/Interactive-PM-Handbook --site "$NETLIFY_SITE_ID" --message "Deploy ${GITHUB_SHA::7} from GitHub Actions"
