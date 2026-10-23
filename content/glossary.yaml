@@ -1,0 +1,175 @@
+- {term: "A/B test", def: "A controlled experiment that randomly assigns eligible users to a control and a variant, then compares a pre-agreed metric.", module: 7}
+- {term: "AARRR", def: "Pirate metrics: Acquisition, Activation, Retention, Revenue, Referral — a lens for diagnosing growth.", module: 7}
+- {term: "Acceptance criteria", def: "Testable conditions a story must meet to be accepted, often written as Given / When / Then.", module: 6}
+- {term: "Accessibility", def: "The degree to which people with different abilities can perceive, understand and use a product; commonly assessed against WCAG.", module: 5}
+- {term: "ACID", def: "Atomicity, Consistency, Isolation, Durability — database transaction guarantees important for money and orders.", module: 9}
+- {term: "Activation", def: "An early user behaviour that indicates the person has reached meaningful value; the right event depends on the product.", module: 7}
+- {term: "Affinity mapping", def: "Clustering research observations into themes to synthesise insights.", module: 3}
+- {term: "Agent (AI agent)", def: "A system that uses a model and tools to work toward a goal, choosing steps based on intermediate results, within limits set by a person or policy.", module: 12}
+- {term: "Agile", def: "A family of approaches that deliver in small increments and adapt using feedback (e.g., Scrum, Kanban).", module: 1}
+- {term: "Ansoff matrix", def: "Growth options: market penetration, product development, market development, diversification.", module: 2}
+- {term: "API", def: "An agreed way for one piece of software to request data or an action from another; a request goes in, a response (data or error) comes back.", module: 9}
+- {term: "ARPU / ARPPU", def: "Average revenue per user / per paying user over a period.", module: 7}
+- {term: "Assumption mapping", def: "Plotting assumptions by importance and evidence to decide which to test first.", module: 3}
+- {term: "Attention (self-attention)", def: "Transformer mechanism that weighs how much each token should use information from every other token in the context.", module: 10}
+- {term: "Authentication (authN)", def: "Verifying who someone is (password, OTP, passkey, SSO).", module: 9}
+- {term: "Authorisation (authZ)", def: "Determining what an authenticated user is allowed to do (roles, permissions, scopes).", module: 9}
+- {term: "Availability", def: "Share of time a system is usable, e.g., 99.9% allows about 43 minutes of downtime per 30-day month.", module: 9}
+- {term: "AOV", def: "Average order value: total order value ÷ number of orders for the same period and definition.", module: 7}
+- {term: "Backlog", def: "An ordered list of work for a product or team; in Scrum, the Product Backlog.", module: 1}
+- {term: "BATNA", def: "Best alternative to a negotiated agreement — your fallback if negotiation fails.", module: 6}
+- {term: "Beta test", def: "Release to external users before general availability to find problems and gather feedback; different from an A/B test.", module: 8}
+- {term: "Blue Ocean Strategy", def: "Creating uncontested market space by reshaping value (eliminate, reduce, raise, create) rather than competing head-on.", module: 2}
+- {term: "Build–Measure–Learn", def: "The Lean Startup feedback loop: build an MVP, measure, learn, and decide to pivot or persevere.", module: 4}
+- {term: "Business Model Canvas", def: "Nine-block description of how an organisation creates, delivers and captures value.", module: 2}
+- {term: "CAC", def: "Customer acquisition cost: acquisition spend ÷ new customers acquired, with costs explicitly defined.", module: 7}
+- {term: "Cache", def: "Fast storage of frequently used data to reduce latency and load; trades freshness for speed.", module: 9}
+- {term: "CDN", def: "Content delivery network: servers near users that cache static content.", module: 9}
+- {term: "Churn", def: "The proportion of customers (or revenue) lost over a defined period from a defined starting group.", module: 7}
+- {term: "CI/CD", def: "Continuous integration and continuous delivery/deployment: automatically build, test and release code changes.", module: 9}
+- {term: "Cohort", def: "A group of users who share a starting event or period, such as signing up in the same week.", module: 7}
+- {term: "Cognitive load", def: "Mental effort required to use an interface; designers reduce extraneous load.", module: 5}
+- {term: "Confidence interval", def: "A range of effect sizes consistent with the data, produced by a procedure that captures the true value at a stated rate (e.g., 95%).", module: 7}
+- {term: "Context window", def: "The limit on how much text (in tokens) a model can process in one request, including instructions, input and output.", module: 10}
+- {term: "Contribution margin", def: "Revenue minus specified variable costs for a unit (such as an order). Not the same as net profit because fixed costs are excluded.", module: 7}
+- {term: "Cost of Delay", def: "The value lost per unit time by not having something; used to prioritise time-sensitive work.", module: 4}
+- {term: "Cosine similarity", def: "A measure of similarity between two vectors based on the angle between them (−1 to 1).", module: 10}
+- {term: "CORS", def: "A browser security mechanism controlling which origins may make requests to a server — not a synonym for all UI–API communication.", module: 9}
+- {term: "Customer journey map", def: "A visual of a persona's stages, actions, thoughts, emotions, touchpoints and pain points across an experience.", module: 3}
+- {term: "DACI", def: "Decision framework: Driver, Approver, Contributors, Informed.", module: 6}
+- {term: "DAU / WAU / MAU", def: "Distinct users with a qualifying action in a day, week or month.", module: 7}
+- {term: "Definition of Done", def: "A team's shared quality criteria for completed work.", module: 1}
+- {term: "Definition of Ready", def: "Criteria a team may use before starting work on an item.", module: 1}
+- {term: "Dependency", def: "Work or a decision that another piece of work relies on.", module: 4}
+- {term: "Design system", def: "A shared library of tokens, components, patterns and guidelines (and code) for consistent UI.", module: 5}
+- {term: "Design Thinking", def: "A human-centred, iterative approach: empathise, define, ideate, prototype, test.", module: 5}
+- {term: "Discovery", def: "Work to decide what is worth building by learning about users, problems and solutions before and during delivery.", module: 3}
+- {term: "Double Diamond", def: "Design process model: discover and define the right problem, develop and deliver the right solution.", module: 5}
+- {term: "Dual-track agile", def: "Running discovery and delivery in parallel so validated ideas continuously feed the backlog.", module: 1}
+- {term: "Embedding", def: "A list of numbers made by a model to represent an item for tasks such as similarity search.", module: 10}
+- {term: "Epic", def: "A large body of work broken into smaller stories.", module: 6}
+- {term: "Error budget", def: "Allowed unreliability implied by an SLO (100% − SLO) over a period.", module: 9}
+- {term: "Evaluation (eval)", def: "A repeatable set of test cases and scoring rules for an AI system.", module: 10}
+- {term: "Event instrumentation", def: "Adding tracking so that user actions become analytics events with defined names and properties.", module: 7}
+- {term: "Feature flag", def: "A switch to turn functionality on or off, or for a subset of users, without redeploying.", module: 9}
+- {term: "Fine-tuning", def: "Additional training that changes a model's parameters to adjust behaviour; it does not add live knowledge or guarantee truth.", module: 10}
+- {term: "First principles thinking", def: "Breaking a problem into fundamental truths and reasoning up from them instead of by analogy.", module: 4}
+- {term: "Fishbone diagram", def: "Ishikawa diagram organising possible causes by category.", module: 4}
+- {term: "Fitts's law", def: "Time to reach a target depends on distance and size: T = a + b log₂(D/W + 1).", module: 5}
+- {term: "Five Whys", def: "Asking 'why?' repeatedly to move from a symptom toward a root cause; each step needs evidence.", module: 4}
+- {term: "Focus group", def: "A moderated research discussion with a group of participants — not another name for a target audience.", module: 3}
+- {term: "Freemium", def: "A model with a usable free tier and paid upgrades.", module: 8}
+- {term: "Function calling (tool calling)", def: "A model outputs a structured request to run a defined tool; the application executes it and returns the result.", module: 12}
+- {term: "Funnel", def: "A sequence of steps toward a goal with counts at each step; used to find drop-offs.", module: 7}
+- {term: "Gestalt principles", def: "Perception principles (proximity, similarity, closure, etc.) describing how people group visual elements.", module: 5}
+- {term: "GMV", def: "Gross merchandise value: total value of orders through a marketplace in a period — not the platform's revenue.", module: 7}
+- {term: "Go-to-market (GTM)", def: "The plan for reaching, converting and supporting the right customers: audience, positioning, pricing, channels, readiness and measurement.", module: 8}
+- {term: "GraphQL", def: "An API query language where clients request exactly the fields they need from a typed schema.", module: 9}
+- {term: "Grounding", def: "Tying model outputs to verifiable sources, e.g., via retrieval and citations.", module: 10}
+- {term: "Growth loop", def: "A system where the output of one cycle (e.g., new users) becomes input to the next, compounding growth.", module: 8}
+- {term: "Guardrail metric", def: "A metric watched to ensure that improving the main metric does not cause harm elsewhere (for example complaints or refund rate).", module: 7}
+- {term: "Guesstimate", def: "A structured estimate built from explicit assumptions, ideally with two methods and a range.", module: 3}
+- {term: "Hallucination", def: "Model-generated content that is false or unsupported by the provided sources.", module: 10}
+- {term: "HEART", def: "UX metrics framework: Happiness, Engagement, Adoption, Retention, Task success.", module: 5}
+- {term: "Heuristic evaluation", def: "Expert review of an interface against usability principles such as Nielsen's 10 heuristics.", module: 5}
+- {term: "Hick's law", def: "Decision time grows with the number and complexity of choices: T = b log₂(n + 1).", module: 5}
+- {term: "Human-in-the-loop (HITL)", def: "Placing people at key points of an AI system to review, approve or handle exceptions.", module: 10}
+- {term: "Hypothesis", def: "A clear, testable prediction, e.g. 'We believe that change X will improve metric Y for users Z because R'.", module: 4}
+- {term: "ICE", def: "Prioritisation score: Impact × Confidence × Ease (1–10 scales).", module: 4}
+- {term: "Idempotency", def: "Property where repeating an operation has the same effect as doing it once; vital for retried payments.", module: 9}
+- {term: "Information architecture", def: "How content is organised, labelled and navigated so people can find it.", module: 5}
+- {term: "Jakob's law", def: "Users expect your product to work like the others they already use.", module: 5}
+- {term: "JSON", def: "A text data format of key–value pairs and lists commonly used by APIs.", module: 9}
+- {term: "Jobs to Be Done (JTBD)", def: "Framing demand as the progress people seek in a particular circumstance.", module: 3}
+- {term: "Kanban", def: "A method for visualising and improving flow, including limiting work in progress.", module: 1}
+- {term: "Kano model", def: "Classifies features as must-be, performance, attractive, indifferent or reverse by their effect on satisfaction.", module: 4}
+- {term: "K-factor", def: "Viral coefficient: invites per user × invite conversion rate.", module: 8}
+- {term: "KPI", def: "Key performance indicator: a metric chosen to assess progress toward an important goal.", module: 7}
+- {term: "Latency", def: "Time to respond to a request; reported as percentiles such as p50, p95, p99.", module: 9}
+- {term: "Lean Canvas", def: "A startup-oriented business model canvas focused on problem, solution, key metrics and unfair advantage.", module: 2}
+- {term: "Lean Startup", def: "Approach that reduces waste by testing business hypotheses with MVPs and validated learning.", module: 4}
+- {term: "LLM", def: "Large language model: a model trained on large amounts of text that generates text by predicting likely next tokens given its context.", module: 10}
+- {term: "Load balancer", def: "Distributes requests across servers and removes unhealthy ones.", module: 9}
+- {term: "LoRA", def: "Low-Rank Adaptation, a parameter-efficient fine-tuning technique — not a standalone model.", module: 10}
+- {term: "LTV", def: "Lifetime value: estimated future contribution from a customer under assumptions about retention and margin.", module: 7}
+- {term: "MCP", def: "Model Context Protocol: a standard way for AI applications to connect to external tools and resources. It does not replace every API and does not by itself grant permission.", module: 12}
+- {term: "Microservices", def: "An architecture of small services each owning a capability and its data, deployed independently.", module: 9}
+- {term: "Minimum detectable effect (MDE)", def: "The smallest effect an experiment is designed to detect; smaller MDE needs much larger samples.", module: 7}
+- {term: "Monolith", def: "A single deployable application containing most functionality.", module: 9}
+- {term: "MoSCoW", def: "Scope prioritisation into Must, Should, Could and Won't (this time) for a release.", module: 4}
+- {term: "MVP", def: "Minimum viable product: the smallest useful version or experiment that lets a team learn about an important assumption with real users. Not the same as a prototype or a public launch.", module: 4}
+- {term: "Network effect", def: "When each additional user makes the product more valuable to others; often local and weakened by multi-homing.", module: 2}
+- {term: "North Star metric", def: "A chosen measure of recurring user value that also supports sustainable business results; supported by input metrics and guardrails.", module: 7}
+- {term: "NRR", def: "Net revenue retention: (start MRR + expansion − contraction − churn) ÷ start MRR.", module: 8}
+- {term: "OAuth 2.0", def: "A standard for delegated authorisation using scoped access tokens instead of sharing passwords.", module: 9}
+- {term: "Observability", def: "Understanding system behaviour from logs, metrics and traces.", module: 9}
+- {term: "OKR", def: "Objectives and Key Results: a qualitative objective with measurable key results.", module: 2}
+- {term: "Opportunity Solution Tree", def: "A visual linking a desired outcome to customer opportunities, solutions and experiments.", module: 3}
+- {term: "Outcome", def: "A change in user behaviour or business results caused by what the team shipped (as opposed to the output itself).", module: 1}
+- {term: "Output", def: "What a team produces: features shipped, tickets closed, story points. Not evidence of value on its own.", module: 1}
+- {term: "p-value", def: "The probability of seeing a result at least as extreme as observed if there were truly no effect; not the probability the variant works.", module: 7}
+- {term: "Pareto analysis", def: "Ranking causes by frequency or impact to focus on the vital few.", module: 4}
+- {term: "Payback period", def: "Time to recover CAC from contribution: CAC ÷ monthly contribution per customer.", module: 7}
+- {term: "PCI DSS", def: "Payment card industry data security standard governing handling of card data.", module: 9}
+- {term: "Persona", def: "An illustrative profile of a user segment, ideally built from research; a learning aid, not proof that everyone in a group behaves alike.", module: 3}
+- {term: "PESTLE", def: "Macro scan: Political, Economic, Social, Technological, Legal, Environmental.", module: 2}
+- {term: "Pivot", def: "A substantive change in strategy based on evidence — not every small iteration.", module: 4}
+- {term: "Porter's Five Forces", def: "Industry analysis of rivalry, new entrants, substitutes, buyer power and supplier power.", module: 2}
+- {term: "Positioning", def: "How a product is defined for a target customer relative to alternatives.", module: 2}
+- {term: "Power (statistical)", def: "The probability an experiment detects a real effect of a given size; commonly targeted at 80%.", module: 7}
+- {term: "PRD", def: "Product requirements document: a shared explanation of the problem, users, goals, scope, requirements, success metrics, risks and open questions.", module: 6}
+- {term: "Product-led growth (PLG)", def: "Growth where the product drives acquisition, conversion and expansion through self-serve use.", module: 8}
+- {term: "Product-market fit", def: "A state where a product satisfies a real market need strongly enough that customers keep using, paying for and recommending it.", module: 1}
+- {term: "Product Owner", def: "Scrum accountability for maximising product value and managing the Product Backlog; may or may not be the PM.", module: 1}
+- {term: "Prompt engineering", def: "Designing instructions, context, examples and output formats to get reliable model outputs.", module: 10}
+- {term: "Prompt injection", def: "Untrusted text containing instructions that try to hijack an AI system's behaviour.", module: 12}
+- {term: "Prototype", def: "An early model used to explore or test an idea; it may be paper, a clickable design or a partly working app, and may not include real backend services.", module: 11}
+- {term: "Pull request (PR)", def: "A proposed set of code changes for review before merging.", module: 11}
+- {term: "Pyramid Principle", def: "Communication structure that starts with the answer and supports it with grouped arguments and evidence.", module: 6}
+- {term: "Queue (message queue)", def: "A buffer where producers place work for consumers to process asynchronously.", module: 9}
+- {term: "Quick ratio (SaaS)", def: "(New + expansion + reactivation MRR) ÷ (churned + contraction MRR).", module: 8}
+- {term: "RACI", def: "Responsible, Accountable, Consulted, Informed — a responsibility matrix.", module: 6}
+- {term: "RAG", def: "Retrieval-augmented generation: find relevant source material at question time, give it to a language model with the question, and generate an answer grounded in it. It does not retrain the model and does not require a vector database.", module: 10}
+- {term: "Rate limit", def: "A cap on requests per time window; exceeding it typically returns HTTP 429.", module: 9}
+- {term: "Repository", def: "A project folder with version history (e.g., in Git/GitHub).", module: 11}
+- {term: "REST", def: "An architectural style for APIs organised around resources and standard HTTP methods.", module: 9}
+- {term: "Retention", def: "How many users return or continue to receive value over a defined period, measured for a defined cohort and window.", module: 7}
+- {term: "RICE", def: "A prioritisation score: Reach × Impact × Confidence ÷ Effort. A discussion aid, not an automatic decision.", module: 4}
+- {term: "Root cause analysis (RCA)", def: "Investigating the underlying causes of a problem so it can be prevented, not just patched.", module: 4}
+- {term: "Sample ratio mismatch (SRM)", def: "When observed group sizes differ from the planned split more than chance allows — a sign the experiment may be broken.", module: 7}
+- {term: "Scrum", def: "An Agile framework with sprints, defined accountabilities (Product Owner, Scrum Master, Developers), events and artefacts.", module: 1}
+- {term: "Segment", def: "A group of users sharing a relevant need or behaviour.", module: 3}
+- {term: "Semantic search", def: "Search by meaning using embeddings rather than exact keywords.", module: 10}
+- {term: "SLI / SLO / SLA", def: "Service level indicator (measurement), objective (target) and agreement (contractual promise).", module: 9}
+- {term: "Sprint", def: "A time-box in Scrum of one month or less during which a team works toward a Sprint Goal.", module: 1}
+- {term: "SQL", def: "Structured Query Language for querying and managing relational data.", module: 7}
+- {term: "STAR", def: "Situation, Task, Action, Result — structure for behavioural interview answers.", module: 6}
+- {term: "Statistical significance", def: "A result unlikely under the null hypothesis at a pre-set threshold α; not the same as practical importance.", module: 7}
+- {term: "Stickiness", def: "DAU ÷ MAU — how often monthly users engage on a typical day.", module: 7}
+- {term: "Story points", def: "Relative effort estimates used by a team for planning — not a productivity score.", module: 6}
+- {term: "SUS", def: "System Usability Scale: a 10-item questionnaire scored 0–100 (around 68 is often cited as average).", module: 5}
+- {term: "SWOT", def: "Strengths, Weaknesses, Opportunities, Threats.", module: 2}
+- {term: "Systems thinking", def: "Analysing feedback loops, delays and interactions to avoid local optimisation with hidden side effects.", module: 4}
+- {term: "TAM / SAM / SOM", def: "Total addressable market, serviceable available market, serviceable obtainable market: successively narrower estimates of demand under explicit assumptions.", module: 2}
+- {term: "Technical debt", def: "The future cost of a technical shortcut or outdated implementation; not every bug is technical debt.", module: 9}
+- {term: "Temperature", def: "A sampling setting controlling randomness in model outputs; lower is more deterministic.", module: 10}
+- {term: "Throughput", def: "Number of requests or transactions processed per unit time.", module: 9}
+- {term: "Token", def: "A unit of text (word, sub-word or punctuation) processed by a language model.", module: 10}
+- {term: "Transformer", def: "Neural network architecture based on self-attention, underlying modern LLMs.", module: 10}
+- {term: "Triangulation", def: "Reaching conclusions from multiple independent types of evidence.", module: 3}
+- {term: "Type I / Type II error", def: "False positive (finding an effect that isn't real) / false negative (missing a real effect).", module: 7}
+- {term: "UAT", def: "User acceptance testing: checking whether a solution meets user or business acceptance needs before release.", module: 1}
+- {term: "Unicorn", def: "A privately held company valued at $1 billion or more (valuation, not revenue).", module: 2}
+- {term: "Unit economics", def: "Revenue and costs for a single unit (order, customer) to judge whether growth is sustainable.", module: 7}
+- {term: "Usability test", def: "Observing representative users attempting realistic tasks to find problems.", module: 5}
+- {term: "User flow", def: "The path of steps and decisions a user takes within a product to reach a goal.", module: 5}
+- {term: "User story", def: "A short description of a capability from the user's perspective: As a … I want … so that …", module: 6}
+- {term: "UX / UI", def: "UX is the whole experience of achieving a goal; UI is the interface people see and use (controls, layout, typography).", module: 5}
+- {term: "Value proposition", def: "A statement of the benefit a customer gets and why it beats alternatives.", module: 2}
+- {term: "Vector database", def: "A store optimised for finding embeddings similar to a query; complements, not replaces, transactional databases.", module: 10}
+- {term: "Vibe coding", def: "Building software by describing goals in natural language to an AI coding tool and iterating on the results.", module: 11}
+- {term: "WCAG", def: "Web Content Accessibility Guidelines (currently 2.2), organised around perceivable, operable, understandable and robust.", module: 5}
+- {term: "Webhook", def: "An HTTP callback sent by one system to another when an event occurs.", module: 9}
+- {term: "Wireframe", def: "A low-fidelity layout showing structure and content priority without visual polish.", module: 5}
+- {term: "Workflow (automation)", def: "A predefined sequence of steps executed automatically; more predictable than an agent.", module: 12}
+- {term: "WSJF", def: "Weighted Shortest Job First: Cost of Delay ÷ job size.", module: 4}

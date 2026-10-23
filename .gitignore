@@ -1,0 +1,12 @@
+# Raw text extracted from the private course PDFs — kept local, not published
+_source/
+# Netlify local state
+.netlify/
+# Python
+__pycache__/
+*.pyc
+# Temp PDF outputs
+*.tmp.pdf
+# OS
+Thumbs.db
+.DS_Store
