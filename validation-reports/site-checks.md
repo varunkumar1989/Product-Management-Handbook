@@ -1,6 +1,6 @@
 # Site checks
 
-Pages: 33 · internal links checked: 1699 · problems: 0
+Pages: 33 · internal links checked: 1735 · problems: 0
 
 - No broken internal links or anchors.
 
@@ -14,12 +14,12 @@ Pages: 33 · internal links checked: 1699 · problems: 0
 | m04.html | 13 | 15 | 1 | 0 |
 | m05.html | 8 | 21 | 1 | 0 |
 | m06.html | 12 | 19 | 1 | 0 |
-| m07.html | 12 | 23 | 1 | 0 |
-| m08.html | 9 | 23 | 1 | 0 |
-| m09.html | 11 | 22 | 1 | 0 |
-| m10.html | 8 | 19 | 1 | 0 |
-| m11.html | 9 | 18 | 1 | 0 |
-| m12.html | 8 | 24 | 1 | 0 |
+| m07.html | 12 | 28 | 1 | 0 |
+| m08.html | 9 | 30 | 1 | 0 |
+| m09.html | 11 | 31 | 1 | 0 |
+| m10.html | 8 | 24 | 1 | 0 |
+| m11.html | 9 | 24 | 1 | 0 |
+| m12.html | 8 | 28 | 1 | 0 |
 | m13.html | 8 | 12 | 1 | 0 |
 | m14.html | 8 | 13 | 1 | 0 |
 | m15.html | 8 | 13 | 1 | 0 |
