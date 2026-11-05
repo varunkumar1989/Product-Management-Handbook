@@ -9,7 +9,7 @@ A visual, interactive Product Management study system built from your 55-lecture
 - **Interactive site:** `html/Interactive-PM-Handbook/index.html` — works offline straight from disk (no server, no API keys).
 - **Entry point listing everything:** `index.html` in this folder.
 - **All links in one file:** [`LINKS.md`](./LINKS.md): live pages and PDFs for every module, plus the resume and case-study portfolio.
-- **PDFs:** `pdf/` — the AI Tools Lab (`AI-Tools-Lab.pdf`), the complete handbook (570 pages, page-numbered contents, 730 bookmarks), 23 module PDFs, and separate PDFs for the Framework Library, Case Studies, Practical Projects and Interview Handbook.
+- **PDFs:** `pdf/` — the AI Tools Lab (`AI-Tools-Lab.pdf`), the complete handbook (620+ pages, page-numbered contents, 730 bookmarks), 23 module PDFs, and separate PDFs for the Framework Library, Case Studies, Practical Projects and Interview Handbook.
 
 ## What's inside
 | Part | Contents |
