@@ -192,3 +192,20 @@
 - {term: "Text-to-speech (TTS)", def: "Software that turns text into a spoken voice; the last step before a voice agent speaks.", module: 22}
 - {term: "Trigger (automation)", def: "The event that starts an automation, such as a new email, form response, schedule or webhook call.", module: 20}
 - {term: "24-hour customer service window", def: "The period after a customer messages a business on WhatsApp in which the business can reply without a template.", module: 21}
+- {term: "Magic moment", def: "The earliest action or experience that predicts long-term retention (for example uploading a first file or following enough accounts); onboarding is designed to reach it quickly.", module: 7}
+- {term: "Input / output metric", def: "Input metrics are things a team can directly influence; output metrics are the results they produce. Both appear on a metric ladder.", module: 7}
+- {term: "Leading / lagging metric", def: "A leading metric predicts future results (early signal); a lagging metric confirms what already happened (for example revenue).", module: 7}
+- {term: "MTTR / MTBF", def: "Mean time to repair / mean time between failures: engineering reliability measures.", module: 7}
+- {term: "Product-market fit (PMF)", def: "A state where a defined group of customers strongly values the product, shown by retention, referral and revenue signals and, in one common test, at least 40% saying they would be very disappointed without it.", module: 8}
+- {term: "A/A test", def: "A sanity test that gives two groups the same experience to confirm that the experiment setup shows no false difference.", module: 8}
+- {term: "Product-qualified lead (PQL)", def: "An account that has used the product enough to show buying intent, handed to sales in product-led growth.", module: 8}
+- {term: "Growth flywheel", def: "Several growth loops stacked so each turn adds momentum to the next.", module: 8}
+- {term: "CPM / CPC / CPA", def: "Advertising pricing: cost per thousand impressions, per click, and per completed action.", module: 8}
+- {term: "Razor and blades", def: "A business model that sells a durable item cheaply and earns from recurring consumables.", module: 8}
+- {term: "Anchor and decoy pricing", def: "Anchor: a high-priced option that makes others look reasonable. Decoy: a weaker option included to make another option look better.", module: 8}
+- {term: "Polling / webhook", def: "Polling repeatedly asks whether work is done; a webhook is a message the other system sends when it is done.", module: 9}
+- {term: "Functional / non-functional requirement", def: "What the system should do vs how well it should do it (speed, security, availability, scalability).", module: 9}
+- {term: "PREP framework", def: "Prompt structure: Purpose, Requirements, Examples, Parameters.", module: 10}
+- {term: "System prompt", def: "Standing instructions that define a model's role, rules and output format for every conversation.", module: 10}
+- {term: "Acceptance criteria (prompt)", def: "Plain-language checks the generated app must pass, used to test each change in vibe coding.", module: 11}
+- {term: "Agentic coding", def: "Using an AI agent that plans, edits multiple files, runs commands and fixes errors to build software.", module: 12}

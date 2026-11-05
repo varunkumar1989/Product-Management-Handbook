@@ -3,7 +3,7 @@ id: m23
 n: 23
 title: Learning Paths, Courses and Communities
 subtitle: The best free and paid courses for Claude and AI tools in 2026, what each institute teaches, YouTube channels worth following, communities, a 90-day plan with weekly assignments, and portfolio projects.
-summary: Course options from Claude Academy (formerly Anthropic Academy), DeepLearning.AI, Coursera, Udemy, LinkedIn Learning, NextLeap, Airtribe, HelloPM and cohort platforms; official and creator YouTube channels; communities; how to pick a course; a 12-week plan with one assignment a week; portfolio projects; and best practices for learning tools that change monthly.
+summary: Course options from Claude Academy (formerly Anthropic Academy), DeepLearning.AI, Coursera, Udemy, LinkedIn Learning, NextLeap, HelloPM and cohort platforms; official and creator YouTube channels; communities; how to pick a course; a 12-week plan with one assignment a week; portfolio projects; and best practices for learning tools that change monthly.
 hours: 3
 status: drafted
 sources: "Course listings on anthropic.com/learn, deeplearning.ai, coursera.org, udemy.com, LinkedIn Learning, Course Report (NextLeap reviews), Product Compass review of AI PM courses; web searches run 23 Oct 2026"
@@ -54,7 +54,7 @@ caption: Anthropic's course site has reportedly been rebuilt as Claude Academy (
 | Programme | What it emphasises (from public pages and alumni reviews) | Notes |
 |---|---|---|
 | **NextLeap** PM Fellowship | PM foundations, user research, PRDs and wireframes, AI applications, milestones, a capstone, interview prep | Strong alumni reviews; check the current syllabus for which AI tools are taught |
-| **Airtribe** AI-First Product Management | Modules from fundamentals to LLMs, RAG, vibe coding and agentic AI; weekly assignments, capstone, leaderboard | The structure this handbook's 12 core modules follow |
+| **SkillNavora** PM Master Handbook (this handbook) | 12 core modules from fundamentals to LLMs, RAG, vibe coding and agentic AI, plus the AI Tools Lab, with exercises, interview questions and practical projects | Free, self-paced, written by Varun Kumar |
 | **HelloPM** | Cohort-based PM programmes with mentors and case studies | Compare cohort dates, mentors and AI coverage |
 | **Maven cohorts** (various instructors) | Short, intensive AI PM and AI building courses | Quality varies by instructor; read reviews |
 | **Reforge** | Senior PM and growth programmes, AI modules | Best for experienced PMs |

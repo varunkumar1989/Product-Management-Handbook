@@ -159,3 +159,16 @@ All 12 modules, the framework library, case library, projects, interview handboo
 | M12 | L46, L48, L49, L50, L51, L54 (unavailable), L55; picture lessons; Companion 14, 15, 25, 27 |
 | Interview | L18, L22, L30, L44 (unavailable), L52, L53 |
 | Projects | L32, L55 |
+
+## D. Class decks added later (S4–S9)
+
+Each deck was used as a topic checklist. Missing or thin topics were written in new original sections placed before the exercises of the target module. No slides, images or instructor details were copied.
+
+| ID | Deck | Target module | New sections added |
+|---|---|---|---|
+| S4 | Analytics and Metrics (Week 6) | M7 | Metric anatomy and mental model; ladder of metrics; AARRR/HEART worked examples, magic moment, retention curves; metrics cheat sheet and analytics hierarchy; OKRs |
+| S5 | Product Launch, Growth and Monetization (Week 8) | M8 | PMF definitions and measurement; MVP; experimentation; scaling (expansion grid, distribution, first customers); PLG depth and growth loops; revenue models; pricing models |
+| S6 | Tech 101 and System Design | M9 | OTP walkthrough; status codes as UX; data and memory; caching, async, observability; FR/NFR; trade-offs and build vs buy; sprint planning and estimation; worked cases; recommender brief |
+| S7 | LLMs and RAGs | M10 | LLM basics; vocabulary, tokens, embeddings; prompt ladder, PREP and six-part framework; RAG for PMs; PRD-writer system prompt |
+| S8 | Vibe Coding | M11 | Why and how; first-prompt recipe; limits and use cases; debugging; backend memory and APIs; projects and interviews |
+| S9 | Agentic AI (AI Systems in Action) | M12 | Vibe to agentic and full-stack playbook; automation vs agents; AI economics and monetisation; evaluation |
