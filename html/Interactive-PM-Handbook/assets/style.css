@@ -252,7 +252,7 @@ svg .wf-input{fill:var(--surface);stroke:var(--muted)} svg .wf-warn{fill:var(--w
 /* Mobile: canvas grids use at most two columns and long words wrap, so they never widen the page */
 @media (max-width:600px){.canvas{grid-template-columns:repeat(2,minmax(0,1fr))!important}.canvas .cv{overflow-wrap:anywhere}}
 /* Print: let long cell text wrap so wide tables fit the A4 page instead of being cut off */
-@media print{.article td,.article th{overflow-wrap:break-word;word-break:normal;hyphens:manual}.article table th:first-child,.article table td:first-child{min-width:6.5em}.article table{table-layout:auto}}
+@media print{.article td,.article th{overflow-wrap:anywhere}.article table th:first-child,.article table td:first-child{min-width:9em}.article table:not(:has(tr:first-child>:nth-child(6))) th,.article table:not(:has(tr:first-child>:nth-child(6))) td{min-width:6.4em}.article table:not(:has(tr:first-child>:nth-child(6))) th:first-child,.article table:not(:has(tr:first-child>:nth-child(6))) td:first-child{min-width:9em}}
 
 /* Author credit */
 .author{display:flex;align-items:center;gap:12px}
